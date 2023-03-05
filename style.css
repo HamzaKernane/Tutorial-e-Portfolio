@@ -88,12 +88,16 @@ nav {
 
 /* ABOUT ME */
 
-#about-me{
-    min-height: 100vh;
+#about-me {
+    height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
+.about-me{
+    display: flex;
+    flex-direction: column;
+}
 .about-me__info--container{
     display: flex;
     flex-direction: column;
@@ -101,6 +105,7 @@ nav {
     align-items: center;
     max-width: 900px;
     margin: 0 auto;
+    text-align: center;
 }
 
 .about-me__picture--mask{
@@ -123,4 +128,21 @@ nav {
 .about-me__info--para{
     font-size: 16px;
     margin-bottom: 20px;
+}
+
+.about-me__link{
+    color: goldenrod;
+    font-size: 30px;
+    text-decoration: none;
+    padding: 0 10px;
+}
+
+.about-me__img--container{
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.about-me__img{
+    width: 100%;
 }
