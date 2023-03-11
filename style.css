@@ -210,3 +210,84 @@ nav {
     transform: scale(1);
     opacity: 1;
 }
+
+/* Past Jobs*/
+
+.job__img{
+    width: 500px;
+    height: 600px;
+    transition: all 500ms ease;
+}
+
+.job__wrapper{
+    display: flex;
+    box-shadow: 0 20px 80px darkgoldenrod;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    justify-content: center;
+}
+
+.job__wrapper:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: darkgoldenrod;
+    opacity: 0;
+    transition: opacity 450ms ease;
+    z-index: 2;
+}
+
+.job:hover .job__wrapper:before{
+    opacity: 0.7 ;
+}
+
+.job:hover .job__img{
+    transform: scale(1.02);
+    filter: blur(4px);
+}
+
+.job:hover .job__description{
+    opacity: 1;
+    transition: all 500ms ease;
+    transform:translateY(-50%);
+}
+
+.job{
+    padding-top: 50px;
+}
+
+.job__description{
+    position: absolute;
+    top: 50%;
+    left: 90px;
+    transform:translateY(100%);
+    max-width: 550px;
+    z-index: 3;
+    opacity: 0;
+    transition: transform 450ms, opacity 400ms;
+}
+.job__description--title{
+    font-size: 30px;
+}
+
+.job__description--para{
+    margin: 10px 0 ;
+}
+
+.job__description--link{
+    font-size: 30px;
+    text-decoration: none;
+}
+
+.job__description--title, 
+.job__description--sub-title,
+.job__description--para,
+.job__description--link {
+    text-align: left;
+    color: whitesmoke;
+
+}
