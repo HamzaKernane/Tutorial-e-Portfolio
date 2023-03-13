@@ -7,6 +7,10 @@
     box-sizing: border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 h1, h2, h3, h4, h5, h6, span {
     color: #242424;
     text-align: center;
@@ -20,6 +24,10 @@ h1{
 p {
     line-height: 1.5;
     font-size: 16px;
+}
+
+a {
+    text-decoration: none;
 }
 
 li {
@@ -36,6 +44,7 @@ li {
 
 .container{
     padding: 35px 0;
+    background-color: lightgray;
 }
 
 .row{
@@ -48,9 +57,7 @@ li {
     color: goldenrod;
 }
 
-section:nth-last-child(odd) {
-    background-color: lightgray ;
-}
+
 
 .section__title{
     margin-bottom: 40px;
@@ -104,6 +111,7 @@ nav {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color: lightgray;
 }
 
 .about-me__info{
@@ -158,7 +166,6 @@ nav {
 
 .about-me__img{
     width: 100%;
-    height: 700px;
 }
 
 /* Trophies Images */ 
@@ -257,7 +264,11 @@ nav {
 }
 
 .job{
-    padding-top: 50px;
+    margin-bottom: 140px;
+}
+
+.job:last-child{
+    margin-bottom: 40px;
 }
 
 .job__description{
@@ -290,4 +301,54 @@ nav {
     text-align: left;
     color: whitesmoke;
 
+}
+
+/*FOOTER*/
+
+footer {
+    background-color:hsl(205.71deg 5.26% 26.08%);
+}
+
+.footer__row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 8% 0;
+}
+
+.footer__social--list{
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer__logo--img{
+    width: 100px;
+    height: 100px;
+}
+
+.footer__social--link{
+    color: blanchedalmond;
+}
+
+.footer__logo--popper{
+    color: blanchedalmond;
+    position: absolute;
+    right: 0;
+    top: 30px;
+    font-weight: 800;
+    opacity: 0;
+    transition: all 600ms ease;
+}
+
+.footer__anchor{
+    position: relative;
+    margin-bottom: 21px; ;
+}
+
+.footer__anchor:hover .footer__logo--popper{
+    transform: translateX(60px);
+    opacity: 1;
 }
