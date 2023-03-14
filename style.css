@@ -28,6 +28,38 @@ p {
 
 a {
     text-decoration: none;
+    position: relative;
+}
+
+i {
+    transition: all 300ms ease;
+}
+
+i:hover{
+    opacity: 0.7;
+}
+
+.link__hover-effect::after{
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 0;
+    bottom: -3px;
+    right: 0;
+    transition: all 500ms ease;
+}
+
+.link__hover-effect--white::after{
+    background-color: blanchedalmond;
+}
+
+.link__hover-effect--black::after{
+    background-color: darkgoldenrod;
+}
+
+.link__hover-effect:hover:after {
+    width: 100%;
+    left: 0;
 }
 
 li {
@@ -51,10 +83,11 @@ li {
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
+    padding: 0 35px;
 }
 
 .text--gold{
-    color: goldenrod;
+    color: darkgoldenrod;
 }
 
 
@@ -73,6 +106,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 10px;
 }
 
 .nav__link--list {
@@ -90,7 +124,7 @@ nav {
     background-color: goldenrod;
     padding: 8px 20px;
     border-radius: 50px;
-    color: antiquewhite;
+    color: whitesmoke;
     transition: all 300ms ease;
 }
 
@@ -100,7 +134,7 @@ nav {
 
 .personal__logo {
     font-size: 24px;
-    color: goldenrod;
+    color: darkgoldenrod;
     margin: 0 12px;
     font-weight: bold;
 }
@@ -136,6 +170,22 @@ nav {
     overflow: hidden;
     box-shadow: 0 2px 16px goldenrod;
     margin-bottom: 10px;
+    animation: animate-profile-picture 800ms;
+}
+
+@keyframes animate-profile-picture {
+    
+    0% {
+        transform: scale(0);
+    }
+
+    80% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 .about-me__picture{
@@ -149,13 +199,32 @@ nav {
 .about-me__info--para{
     font-size: 16px;
     margin-bottom: 20px;
+    animation: fade-up 600ms 400ms backwards;
+}
+
+.about-me__info--title{
+    animation: fade-up 500ms 400ms backwards;
 }
 
 .about-me__link{
     color: goldenrod;
     font-size: 30px;
-    text-decoration: none;
     padding: 0 10px;
+}
+
+.about-me__links{
+    animation: fade-up 700ms 400ms backwards;
+}
+
+@keyframes fade-up {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .about-me__img--container{
@@ -166,6 +235,38 @@ nav {
 
 .about-me__img{
     width: 100%;
+    border-radius: 30px;
+    animation: fade-in 1000ms 600ms backwards;
+}
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    
+    100% {
+        opacity: 1;
+    }
+}
+
+.goat{
+    display: inline-block;
+    animation: animate-move 500ms infinite ease;
+}
+
+
+@keyframes animate-move {
+    
+    0% {
+        transform: rotate(0);
+    }
+    
+    50% {
+        transform: rotate(6deg);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
 }
 
 /* Trophies Images */ 
@@ -351,4 +452,72 @@ footer {
 .footer__anchor:hover .footer__logo--popper{
     transform: translateX(60px);
     opacity: 1;
+}
+
+/* Phones & Tablets */
+@media (max-width:768px) {
+    nav{
+        height: 68px;
+    }
+
+    h1{
+        font-size: 28px;
+    }
+
+    .about-me__info--para{
+        font-size: 15px;
+        font-weight: 700;
+        padding: 0 10px;
+    }
+
+    .trophy {
+        width: calc(100%/2);
+    }
+
+    .trophy__list {
+        justify-content: center;
+    }
+
+    .job__description--para{
+        font-size: 14px;
+    }
+
+    .job__description{
+        padding-right: 21px;
+        left: 30px;
+    }
+}
+
+
+/* Small Phones */
+@media (max-width: 480px){
+    .nav__link:not(:last-child){
+        display: none;
+    }
+
+.job__description {
+    padding: 0;
+    left: 0;
+    width: 100%;
+}
+
+    .job__description--para{
+        display:none;
+    }
+
+    .job__description--links{
+        display: flex;
+        justify-content: center;
+    }
+
+    .job__description--title{
+        line-height: 1;
+        font-size: 26px;
+        text-align: center;
+    }
+
+    .job__description--sub-title{
+        text-align: center;
+        margin: 12px 0;
+    }
 }
